@@ -1,0 +1,220 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\hyphenation{co-rres-pon-dien-te}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage[pdftex,colorlinks=true, pdfstartview=FitH, linkcolor=blue, citecolor=blue, urlcolor=blue, pdfpagemode=UseOutlines, pdfauthor={H. Asorey}, pdftitle={Introducción a la Física - Guía 06}, pdfkeywords={Electrostática}]{hyperref}
+\usepackage[adobe-utopia]{mathdesign}
+
+\hoffset -1.23cm
+\textwidth 16.5cm
+\voffset -2.0cm
+\textheight 26.0cm
+
+\begin{document}
+\begin{center}
+  {\small{Universidad Industrial de Santander - Escuela de Física}}\\
+  {\bf{Introducción a la Física (Asorey-Sarmiento-Pinilla)}}\\
+  \vspace{0.4cm}
+  Guía 06: Electrostática\\ 2014
+\end{center}
+
+\renewcommand{\labelenumi}{\arabic{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+
+\section*{Modalidad de Entrega}
+
+\begin{itemize}
+  \item Lea atenta y cuidadosamente todos los problemas antes de proceder al cálculo de los mismos.
+  \item Modalidad de trabajo: grupal, en grupos con un mínimo de dos (2) y un máximo de tres (3) personas por grupo. No se admitirán trabajos individuales ni de grupos con más de tres integrantes. 
+  \item El trabajo será entregado en el aula 3-7 del CENTIC o en las oficinas del Grupo Halley, Ciencias Humanas Of. 504, en la fecha de vencimiento, teniendo en cuenta lo siguiente:
+  \begin{itemize}
+    \item la resolución de al menos uno de los ejercicios (a elección de cada grupo) deberá ser entregada en un \texttt{pdf} obtenido utilizando \LaTeX.
+    \item la resolución del resto de los ejercicios puede ser realizada ``a mano''
+  \end{itemize}
+  \item Para esta entrega, valen todas las indicaciones dadas para la entrega de las guías 3, 4 y 5.
+  \item El cumplimiento de todas las indicaciones será tenido en cuenta.
+  \item Y otra vez, lea atenta y cuidadosamente todos los problemas antes de proceder al cálculo de los mismos.
+  \item {\Large{\bf{Fecha límite de entrega: Miércoles 27/Agosto/2014 a las 11:59:59.}}}
+\end{itemize}
+
+\section*{Ejercicios}
+
+\begin{enumerate}
+
+\item {\bf{Campo gravitatorio}} %23
+
+  El campo gravitatorio es el campo vectorial producido por la presencia de una
+masa o una distribución de masa. En la aproximación de masa puntual, el campo
+gravitatorio de un cuerpo de masa $M$ situada en el origen es: \[
+\vec{g}(\vec{r}) = \left (\frac{GM}{|\vec{r}|^2} \right )
+\hat{r},\] donde $\vec{r}$ es el punto del espacio donde se está
+calculando el valor del campo, y por ende $\hat{r}$ es el
+correspondiente vector unitario, y $G$ es la constante de Newton.
+
+Calcule el vector campo gravitatorio sobre la superficie de la Tierra, y a una
+altura de $1000$\,km sobre la superficie de la misma.
+
+\item {\bf{Sistema Tierra-Luna}} 
+ 
+Repitiendo las cuentas realizadas en clase, calcule la distancia
+$d'$, medida desde el centro de la Tierra, a la cual se anula el campo
+gravitatorio del Sistema Tierra-Luna. Imagine que situamos el origen de
+coordenadas en el centro de la Tierra, de manera que el eje $x$ coincida con la
+dirección Tierra-Luna. Recuerde que la distancia Tierra-Luna es
+$d_{TL}=3.84\times10^8$\,m.
+
+Luego calcule el vector campo gravitatorio Lunar, el campo gravitatorio
+Terrestre y, utilizando el principio de superposición, el campo gravitatorio del
+Sistema Tierra-Luna en los siguientes puntos del espacio:
+
+\begin{enumerate}
+\item $\vec{r}=(R_\mathrm{Tierra};0;0)$;
+\item $\vec{r}=(0;R_\mathrm{Tierra};0)$;
+\item $\vec{r}=(-R_\mathrm{Tierra};0;0)$;
+\item $\vec{r}=(d_{TL}/2;0;0)$;
+\item $\vec{r}=(d';0;0)$;
+\item $\vec{r}=(d';10^7;0)$;
+\item $\vec{r}=(d_{TL}/2;0;0)$;
+\item $\vec{r}=(d_{TL}-R_L;0;0)$;
+\item $\vec{r}=(d_{TL}+R_L;0;0)$;
+\end{enumerate} 
+
+\item {\bf{Sistema Sol-Júpiter}}
+
+Los cuerpos más masivos del Sistema Solar son, por mucho, el Sol y el planeta
+Júpiter. Estudiaremos el Sistema Sol-Júpiter despreciando la existencia de
+todos los demás cuerpos del Sistema Solar. 
+
+Suponga entonces que el Sol se encuentra en el origen, y que la dirección del
+eje $x$ coincide con la dirección que une al Sol con Júpiter. Midiendo las
+distancias en unidades astronómicas ($1$\,UA=$1.5\times10^{11}$\,m), la
+posición del Sol será entonces $r_{\mathrm{Sol}} = (0; 0; 0)$ y la posición de Júpiter
+$r_\mathrm{Jup} = (5,143; 0; 0)$\,UA. 
+
+Entonces, 
+\begin{enumerate}
+  \item encuentre el punto del espacio donde el campo gravitatorio total del sistema Sol-Júpiter se anula. ¿Qué objetos del sistema solar se encuentra en esa región del espacio? Aventure una posible explicación para la existencia de esos objetos.
+  \item calcule el vector campo gravitatorio Solar, el campo gravitatorio de Júpiter y, utilizando el principio de superposición, el campo gravitatorio del Sistema Sol-Júpiter en la posición de la Tierra, $r_\mathrm{Tierra} = (1; 0; 0)$\,UA
+\end{enumerate}
+
+\item {\bf{Gravedad versus Electrostática I}} %26
+
+Imagine dos cuerpos de masas $m_1=m_2=1$\,kg, que se encuentran a una distancia
+$|\vec{r}|=1$\,m. Los cuerpos poseen una carga $q_1=q_2=1$\,C. Calcule la
+relación entre las energías potenciales gravitatoria $E_g= -G m_1 m_2 /
+|\vec{r}|$ y eléctrica $E_e= k_e q_1 q_2 / |\vec{r}|$. Luego, calcule el
+valor del potencial eléctrico $V(\vec{r})$ en el punto medio entre las dos
+cargas.
+
+\item {\bf{Rayos y centellas}}
+
+Se estima que la corriente eléctrica durante una descarga atmosférica (rayo
+eléctrico) puede llegar a $120$\,kA. Sabiendo que la misma dura aproximadamente
+$3$\,ms, calcule la cantidad de carga que se transfiere desde la nube hacia la
+Tierra durante la descarga. Calcule el valor del potencial eléctrico sobre la
+superficie de la Tierra si toda esa carga se distribuye en forma puntual sobre
+la base de la nube de tormenta, a una altura de $2000$\,m sobre la superficie.
+
+\item {\bf{Gravedad versus Electrostática II}}
+
+Trabajemos con el sistema Tierra-Luna. Suponiendo
+que transferimos a la Tierra y a la Luna la misma cantidad de carga positiva $Q$,
+calcule el valor de $Q$ para que la fuerza de repulsión eléctrica entre ambos
+cuerpos iguale a la fuerza de atracción gravitatoria entre los mismos. Sabiendo
+que la carga de un protón es $p=1.602\times10^{-19}$\,C y que el número de
+Avogadro es $N_A=6.022\times
+10^{23}$, diga cuantos moles de protones son necesarios para alcanzar el
+valor de $Q$.
+
+\item {\bf{La famosa carga puntual}}
+
+Imagine una carga fuente $Q=-1$\,C situada en el origen, y sea un cuerpo de
+masa $m=1$\,kg que tiene una carga $q=10^{-9}$\,C situado en la posición
+$\vec{r}=(1,1,1)$. Calcule:
+\begin{enumerate}
+  \item El potencial eléctrico $V(\vec{r})$  en la posición $\vec{r}$ y la
+    energía potencial eléctrica $U_e$ de esta configuración.
+  \item El vector campo eléctrico $\vec{E}(\vec{r})$ en la posición $\vec{r}$ y
+    la fuerza que actúa sobre el cuerpo de prueba.
+  \item La aceleración que experimenta el cuerpo
+\end{enumerate}
+
+\item {\bf{Energía y Fuerzas}}
+
+Aplique el desarrollo genérico visto en la clase 02-07 al caso de la interacción eléctrica, y demuestre que considerando sólo las interacciones gravitatorias y eléctricas, la segunda ley de Newton se escribe cómo
+\[
+  m \vec{a} = \vec{F_g} + \vec{F_e},
+\]
+donde $\vec{F_g}(\vec r) = G\frac{m_1 m_2}{|\vec{r}|^2} \hat{r}$ y $\vec{F_e}(\vec r) = k_e \frac{ q_1 q_2}{|\vec{r}|^2} \hat{r}$.
+
+\item {\bf{Configuración de cargas I}}
+
+Imagine la siguiente configuración de cuatro cargas:
+\begin{center}
+\begin{tabular}{ccc}
+$i$ & $Q_i$ & $\vec{r}_i$ \\
+\hline
+$1$ & $+0.5$\,C & $(+1;0;0)$ \\
+$2$ & $+1.5$\,C & $(-1;0;0)$ \\
+$3$ & $-2.4$\,C & $(0;+1;0)$ \\
+$4$ & $+0.4$\,C & $(0;-1;0)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Calcule lo siguiente: 
+
+\begin{enumerate}
+\item la carga neta del sistema;
+\item la energía potencial eléctrica de esta configuración de cuatro cargas;
+\item el potencial y el campo eléctrico en $\vec{r}=(0;0;0)$;
+\item el potencial y el campo eléctrico en $\vec{r}=(1;1;1)$;
+\item el potencial y el campo eléctrico en $\vec{r}=(200;200;200)$;
+\item explique la razón del resultado obtenido en el punto anterior
+\end{enumerate}
+
+\item Ahora, suponga que un agente externo trae una carga de prueba $q=+0.7$\,C desde el infinito hasta la posición $\vec{r_i}=(0.5;1;1)$. Calcule:
+\begin{enumerate}
+\item el potencial y el campo eléctrico en ese punto;
+\item la energía eléctrica de la configuración obtenida y el vector fuerza $\vec{F}$ que aparece sobre la carga de prueba en ese punto;
+\item el trabajo realizado por el agente externo.
+\end{enumerate}
+
+\item Finalmente, suponga que el agente externo desplaza la carga de prueba $q$ desde $\vec{r_i}=(0.5;1;1)$ hasta $\vec{r_f}=(-0.5;-1;-1)$. Calcule: 
+\begin{enumerate}
+\item el potencial y el campo eléctrico en ese nuevo punto;
+\item la energía eléctrica de la nueva configuración y el vector fuerza $\vec{F}$ que aparece sobre la carga de prueba en ese nuevo punto;
+\item el trabajo realizado por el agente externo.
+\end{enumerate}
+\end{enumerate}
+
+\item {\bf{Configuración de cargas II}}
+
+Imagine la siguiente configuración de dos cargas:
+\begin{center}
+\begin{tabular}{ccc}
+$i$ & $Q_i$ & $\vec{r}_i$ \\
+\hline
+$1$ & $+1.0$\,C & $(+0.1;0;0)$ \\
+$2$ & $-1.0$\,C & $(-0.1;0;0)$,\\
+\hline
+\end{tabular}
+\end{center}
+esto es lo que se conoce como un dipolo eléctrico. Calcule:
+
+\begin{enumerate}
+\item la carga neta del sistema;
+\item el potencial y el campo eléctrico en $\vec{r}=(0;0;0)$;
+\item el potencial y el campo eléctrico en $\vec{r}=(0;1;0)$;
+\item el potencial y el campo eléctrico en $\vec{r}=(50;50;50)$;
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+%%%%

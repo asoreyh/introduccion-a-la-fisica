@@ -1,52 +1,76 @@
 #!/usr/bin/python
 # -*- coding: utf8 -*-
 
-import math
+"""
+Código hecho en clases prácticas de Introducción a la Física
+E. de Física - UIS - Santander - 2013, 2014
+H. Asorey y C. Sarmiento
 
-####################### mi clase vector
+Calcula los rebotes de una pelota con coeficiente de restitución definido
+por el usuario en una caja tridimensional cerrada, con o sin gravedad
+"""
+
+import math
 
 class vector:
     def __init__(self,lista):
-        self.x=[]
-        for xi in lista:
-          self.x.append(float(xi))
-        self.dim=len(self.x)
-        self.mod=math.sqrt(self.prod_escalar(self))
+        self.componentes=[]
+        for componente_i in lista:
+          self.componentes.append(float(componente_i))
+        self.dim=len(self.componentes)
+        self.mod=math.sqrt(prod_escalar(self,self))
 
-    def prod_escalar(self,a):
-        if (self.dim == a.dim):
-            pesc=0.
-            for i in range(0,self.dim):
-                pesc += (self.x[i] * a.x[i])
-            return pesc
-        else:
-            print "El productor escalar se define para vectores de la misma dimension"
-            return None
+###################### Operaciones entre vectores
+
+def prod_escalar(a,b):
+    if (a.dim == b.dim):
+        pesc=0.
+        for i in range(0,a.dim):
+            pesc += (a.componentes[i] * b.componentes[i])
+        return pesc
+    else:
+        print "El productor escalar se define para vectores de la misma dimension"
+        return None
+
+def coseno(a,b):
+    if (a.dim == b.dim):
+      mods=a.mod*b.mod
+      if (mods != 0 ):
+        return (prod_escalar(a,b) / mods)
+      else:
+        print "Para calcular el coseno los vectores no pueden ser nulos"
+        return None
+    else:
+        print "Sólo se calcula el coseno para vectores de la misma dimension"
+        return None
 
 def suma(a, b):
     suma=[]
     if (a.dim == b.dim):
        for i in range(0,a.dim):
-          suma.append(a.x[i]+b.x[i])
+          suma.append(a.componentes[i]+b.componentes[i])
        return vector(suma)
     else:
+       print "La suma se define para vectores de la misma dimension"
        return None
 
 def resta(a, b):
     resta=[]
     if (a.dim == b.dim):
        for i in range(0,a.dim):
-          resta.append(a.x[i]-b.x[i])
+          resta.append(a.componentes[i]-b.componentes[i])
        return vector(resta)
     else:
+       print "La resta se define para vectores de la misma dimension"
        return None
+
+################################## Producto por un escalar
 
 def vector_escalar(a, num):
     escalar=[]
     for i in range(0,a.dim):
-      escalar.append(num*a.x[i])
+      escalar.append(num*a.componentes[i])
     return vector(escalar)
-
 
 ############## funcion rebote
 
@@ -62,13 +86,13 @@ caja=[1.,1.,1.]
 
 def rebote(r, v, restitucion):
   for i in range(0,r.dim):
-    if (abs(r.x[i]) >= caja[i]):
-      if (r.x[i] < 0):
-        r.x[i] = -caja[i]
+    if (abs(r.componentes[i]) >= caja[i]):
+      if (r.componentes[i] < 0):
+        r.componentes[i] = -caja[i]
       else:
-        r.x[i] = caja[i]
+        r.componentes[i] = caja[i]
 
-      v.x[i] = -v.x[i] * restitucion
+      v.componentes[i] = -v.componentes[i] * restitucion
 
 #########
 ######################### mi programa
@@ -86,9 +110,9 @@ r=vector([0,0,0])
 v=vector([1.,2.,3.]) # en m/s
 
 # aceleracion, en este caso, gravedad terrestre
-#g=vector([0,0,-9.8])  # en m/s^2
-g=vector([0,0,0])  # en m/s^2
-
+g=vector([0,0,-9.8])  # en m/s^2
+# g=vector([0,0,0])  # en m/s^2 // esto es sin gravedad
+# g=vector([0,0,-1.6])  # en m/s^2 // estoy en la luna 
 
 # tiempo total de simulacion, en segundos
 tiempo=200.
@@ -107,7 +131,7 @@ for n in range(0,int(tiempo*res)+1): # p. ej, 5 segundos
     # imprimo el paso, el tiempo (s) y la posicion (m):
     print n,n*dt,
     for i in range (0,r.dim):
-      print r.x[i],
+      print r.componentes[i],
     print
 
     # verifico si alcance las paredes de la caja. 0.6 es el coeficiente de restitucion.

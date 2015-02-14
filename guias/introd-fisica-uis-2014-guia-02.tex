@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\hyphenation{co-rres-pon-dien-te}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage[pdftex,colorlinks=true, pdfstartview=FitH, linkcolor=blue, citecolor=blue, urlcolor=blue, pdfpagemode=UseOutlines, pdfauthor={H. Asorey}, pdftitle={Introducción a la Física - Guía 02} pdfkeywords={vectores}]{hyperref}
+\usepackage[adobe-utopia]{mathdesign}
+
+\hoffset -1.23cm
+\textwidth 16.5cm
+\voffset -2.0cm
+\textheight 26.0cm
+
+\begin{document}
+\begin{center}
+  {\small{Universidad Industrial de Santander - Escuela de Física}}\\
+  {\bf{Introducción a la Física (Asorey-Sarmiento-Pinilla)}}\\
+  \vspace{0.4cm}
+  Guía 02: Vectores 2da Parte\\ 2014
+\end{center}
+
+\renewcommand{\labelenumi}{\arabic{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+
+\begin{enumerate}
+  \item A partir de la definición del producto escalar en $\mathbb R^3$, $\vec v \cdot \vec w = \sum_{i=1}^3 v_i w_i =(v_1 w_1 + v_2 w_2 + v_3 w_3)$, verifique que esta definición cumple con las propiedades de un producto escalar
+  \item Sean $\vec a=(1,3,6)$,  $\vec b=(4,-3,3)$ y $\vec c=(2,1,5)$  tres vectores de $\mathbb{R}^3$. Obtenga:
+    \begin{enumerate}
+      \item $\vec a \cdot \vec b$
+      \item $\vec b \cdot \vec c$
+      \item $\vec a \cdot \vec c$
+      \item $\vec a \cdot \left ( \vec b + \vec c\right )$
+      \item $\left( \vec a - \vec b\right ) \cdot \vec c$
+      \item $\left( 3 \vec a + 4 \vec b\right ) \cdot \vec c$
+    \end{enumerate}
+  \item A partir de las propiedades del producto escalar, verifique que la norma inducida por el producto escalar, $ \| v \|= \sqrt{\vec v \cdot \vec v}$, cumple con las propiedades de una norma en un espacio vectorial normado genérico.
+  \item Diga si las siguientes declaraciones son verdaderas o falsas: 
+    \begin{enumerate}
+      \item Si $\vec v \cdot \vec w = \vec v \cdot \vec u$, y $\vec v \neq \vec 0$, entonces $\vec w = \vec u$.
+      \item Si $\vec v \cdot \vec w = 0 \forall \vec w$, entonces $\vec v = \vec 0$. 
+    \end{enumerate}
+  \item Sean $\vec a=(1,3,6)$,  $\vec b=(4,-3,3)$ y $\vec c=(2,1,5)$ tres vectores de $\mathbb{R}^3$, con la definición usual de producto escalar en $\mathbb{R}^3$, calcule
+    \begin{enumerate}
+      \item $\| \vec a \|$, $\| \vec b \|$ y $\| \vec c \|$.
+      \item $\| \vec a + \vec b \|$, $\| \vec a + \vec c \|$ y $\| \vec b + \vec c \|$.
+      \item $\| \vec a - \vec b \|$, $\| \vec a - \vec c \|$ y $\| \vec b - \vec c \|$.
+      \item $\left \| \left ( 3 \vec a + 4 \vec b \right ) \right \|$.
+      \item $\left \| \left ( - \frac52 \vec a + \frac13 \vec b - \frac35 c \right ) \right \|$.
+    \end{enumerate}
+  \item A partir de la definición de versor, $\hat v = \vec v / |\vec v|$, encuentre las componentes de los versores asociados a los siguientes vectores (obtenidos en el punto anterior): 
+    \begin{enumerate}
+      \item $\vec a$, $\vec b$ y $\vec c$.
+      \item $\vec a + \vec b$, $\vec a + \vec c$ y $\vec b + \vec c$.
+      \item $\vec a - \vec b$, $\vec a - \vec c$ y $\vec b - \vec c$.
+      \item $\left ( 3 \vec a + 4 \vec b \right )$.
+      \item $\left ( - \frac52 \vec a + \frac13 \vec b - \frac35 c \right )$.
+    \end{enumerate}
+
+  \item En $\mathbb R^3$, y utilizando los vectores $\vec a$, $\vec b$ y $\vec c$ de los puntos anteriores, calcule las siguientes distancias:
+    \begin{enumerate}
+      \item $d\left (\vec a, \vec a \right )$.
+      \item $d\left (\vec a, \vec b \right )$, $d\left (\vec a, \vec c \right )$ y $d\left (\vec b, \vec c \right )$.
+      \item $d\left ( \left ( \vec a + \vec b \right ), \vec c \right )$.
+      \item $d\left ( \left ( \frac75 \vec a + \frac49 \vec b \right ), \left ( \frac13 \vec a - \frac34 \vec c \right )\right )$.
+    \end{enumerate}
+  \item En $\mathbb R^3$, y utilizando los vectores $\vec a$, $\vec b$ y $\vec c$ de los puntos anteriores, calcule los ángulos entre los siguientes vectores: 
+    \begin{enumerate}
+      \item $\angle \left (\vec a, \vec b \right )$, $\angle \left (\vec a, \vec c \right )$ y $\angle \left (\vec b, \vec c \right )$.
+      \item $\angle \left ( \left ( \vec a + \vec b \right ), \vec c \right )$.
+      \item $\angle \left ( \left ( \frac75 \vec a + \frac49 \vec b \right ), \left ( \frac13 \vec a - \frac34 \vec c \right )\right )$.
+    \end{enumerate}
+  \item Para cada caso, encuentre un vector $\vec w \epsilon \mathbb R^2$, tal que $\vec v \cdot \vec w = 0$ y $\| \vec v \| = \| \vec w \|$: 
+    \begin{enumerate}
+      \item $\vec v = (1,1)$
+      \item $\vec v = (1,-1)$
+      \item $\vec v = (2,-3)$
+      \item $\vec v = (s,t)$
+    \end{enumerate}
+  \item Sean $\vec a=(1,-2,3)$ y $\vec b=(3,1,2)$ dos vectores en $\mathbb R^3$. Para cada caso, encuentre un versor $\hat c$ (vector de módulo 1) que sea paralelo a: 
+    \begin{enumerate}
+      \item $\vec a + \vec b$
+      \item $\vec a - \vec b$
+      \item $\vec a + 2 \vec b$
+      \item $\vec a - 2 \vec b$
+      \item $2 \vec a - \vec b$
+    \end{enumerate}
+  \item Diga si las siguientes declaraciones relacionadas a vectores en $\mathbb R^n$ son verdaderas o falsas:
+    \begin{enumerate}
+      \item Si $\vec v$ es perpendicular a $\vec w$, entonces $\| \vec v + s \vec w \| \geq \| \vec v \| \ \forall s \epsilon \mathbb R$
+      \item Si $\| \vec v + s \vec w \| \geq \| \vec v \| \ \forall s \epsilon \mathbb R$, entonces $\vec v$ es perpendicular a $\vec w$.
+    \end{enumerate}
+  \end{enumerate}
+\end{document}

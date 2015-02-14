@@ -1,0 +1,83 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\hyphenation{co-rres-pon-dien-te}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage[pdftex,colorlinks=true, pdfstartview=FitH, linkcolor=blue, citecolor=blue, urlcolor=blue, pdfpagemode=UseOutlines, pdfauthor={H. Asorey}, pdftitle={Introducción a la Física - Guía 01} pdfkeywords={vectores}]{hyperref}
+\usepackage[adobe-utopia]{mathdesign}
+
+\hoffset -1.23cm
+\textwidth 16.5cm
+\voffset -2.0cm
+\textheight 26.0cm
+
+\begin{document}
+\begin{center}
+  {\small{Universidad Industrial de Santander - Escuela de Física}}\\
+  {\bf{Introducción a la Física (Asorey-Sarmiento-Pinilla)}}\\
+  \vspace{0.4cm}
+  Guía 01: Vectores 1ra Parte\\ 2014
+\end{center}
+
+\renewcommand{\labelenumi}{\arabic{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+
+
+\begin{enumerate}
+  \item Sean $\vec a=(1,3,6)$,  $\vec b=(4,-3,3)$ y $\vec c=(2,1,5)$  tres vectores de $\mathbb{R}^3$. Obtenga: 
+    \begin{enumerate}
+      \item $\vec a + \vec b$
+      \item $\vec a - \vec b$
+      \item $\vec a + \vec b - \vec c$
+      \item $7 \vec a - 2 \vec b - 3 \vec c$
+      \item $2 \vec a + \vec b - 3 \vec c$
+      \item $-\frac54  \vec a + \frac29 \vec b - \frac72 \vec c$
+      \item $\pi  \vec a + \frac\pi 2 \vec b - \frac\pi 3 \vec c$
+      \item $\pi  \vec a + 0.2 \vec b - \frac34 \vec c$
+    \end{enumerate}
+  \item Sean $\vec a=(2,1)$ y $\vec b=(1,3)$ dos vectores de $\mathbb{R}^2$
+    \begin{enumerate}
+      \item Dibuje un sistemas de coordenadas para $\mathbb{R}^2$ y dibuje los vectores $\vec a$ y $\vec b$. 
+      \item En la misma figura anterior, dibuje los vectores $\vec c$, obtenidos a partir de $\vec c=\vec a + t \vec b$, donde $t$ va tomando los siguientes valores: $t=\frac13$;  $t=\frac12$;  $t=\frac34$;  $t=1$;  $t=2$;  $t=-1$;  $t=-2$.
+    \end{enumerate}
+  \item Repita el ejercicio anterior pero ahora suponiendo que $\vec c = t \vec a + \vec b$.
+  \item Sean $\vec a= (2, 1)$ y $\vec b=(1, 3)$, y $\vec c = s \vec a + t \vec b$ tres vectores de $\mathbb R^2$, donde $s$ y $t$ son números reales ($\mathbb R$). 
+    \begin{enumerate}
+      \item Dibuje un sistemas de coordenadas para $\mathbb{R}^2$ y dibuje el vector $\vec c$ para cada uno de los siguientes pares de valores para $s$ y $t$: $s=t=\frac12$; $s=\frac14,t=\frac34$; $s=2, t=-1$;  $s=-\frac12,t=\frac32$.
+      \item De una idea del conjunto de todos los vectores $\vec c$ que se obtendrían si $s$ y $t$ pueden variar en forma independiente en los intervalos $0 \leq s \leq 1$ y $0 \leq t \leq 1$, y haga un esquema del conjunto.
+    \end{enumerate}
+  \item Dibujando vectores en el plano $\mathbb R^2$, ilustre el significado geométrico de las dos leyes distributivas:
+    \begin{enumerate}
+      \item $(s+t) \vec a = s \vec a + t \vec a$
+      \item $s (\vec a + \vec b= s \vec a + s \vec b$
+    \end{enumerate}
+  \item Sea en $\mathbb R^2$ el cuadrilátero con vértices $OABC$, donde los puntos $A$ y $C$ son los vértices opuestos del cuadrilátero y el punto $O$ corresponde al origen de coordenadas. Muestre que los vectores $\vec a$, $\vec b$, y $\vec c$, asociados respectivamente a los puntos $A$, $B$ y $C$, verifican la siguiente relación: \[\vec a + \frac12 \left ( \vec c - \vec a \right ) = \frac12 \vec b.\]
+  \item Sean $\vec a=(1,1,1)$,  $\vec b=(0,1,1)$ y $\vec c=(1,1,0)$  tres vectores de $\mathbb{R}^3$, y sea $\vec d = x \vec a + y \vec b + z \vec c$, donde $x$, $y$ y $z$ son números reales, y sea $S=\left \{ \vec a; \vec b; \vec c \right \}$
+    \begin{enumerate}
+      \item Verifique que el conjunto $S$ es un conjunto de generadores de $\mathbb R^3$
+      \item Verifique que los vectores del conjunto $S$ forman un conjunto linealmente independiente.
+      \item El conjunto $S$, ¿es una base de $\mathbb R^3$? Justifique
+      \item Encuentre los valores de $x$ $y$ y $z$ para el obtener el vector $\vec d = (1,2,3)$.
+    \end{enumerate}
+  \item Sean $\vec a=(1,1,1)$,  $\vec b=(0,1,1)$ y $\vec c=(2,1,1)$  tres vectores de $\mathbb{R}^3$, y sea $\vec d = x \vec a + y \vec b + z \vec c$, donde $x$, $y$ y $z$ son números reales, y sea el conjunto $S=\left \{ \vec a; \vec b; \vec c \right \}$.
+    \begin{enumerate}
+      \item Muestre que no es posible obtener el vector $\vec d = (1,2,3)$ como una combinación lineal de los vectores de $S$.
+      \item En función del resultado anterior, diga si $S$ es un conjunto de generadores de $\mathbb R^3$
+      \item Verifique si los vectores de $S$ forman un conjunto linealmente independiente
+      \item Responda: el conjunto $S$, ¿es una base de $\mathbb R^3$? Justifique
+    \end{enumerate}
+  \item Diga si los vectores del conjunto $B=\left \{\vec u=(1,1,1); \vec v=(1,1,0); \vec w=(1,0,0) \right \}$ forman una base de $\mathbb R^3$.
+  \item Verificar si los siguientes conjuntos forman bases de $\mathbb R^3$. Justifique su respuesta: 
+    \begin{enumerate}
+      \item $A=\left \{\vec u=(1,1,1);\vec v=(1,1,0);\vec w=(1,0,0) \right \}$
+      \item $B=\left \{\vec u=(0,1,0);\vec v=(0,0,1);\vec w=(1,0,0) \right \}$
+      \item $C=\left \{\vec u=(0,0,0);\vec v=(0,1,0);\vec w=(0,0,1) \right \}$
+      \item $D=\left \{\vec u=(1,1,1);\vec v=(1,2,3);\vec w=(4,5,1) \right \}$
+      \item $E=\left \{\vec u=(1,1,1);\vec v=(1,2,3);\vec w=(4,5,6) \right \}$
+    \end{enumerate}
+\end{enumerate}
+\end{document}

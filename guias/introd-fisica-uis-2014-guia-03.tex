@@ -1,0 +1,62 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[spanish]{babel}
+\hyphenation{co-rres-pon-dien-te}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage[pdftex,colorlinks=true, pdfstartview=FitH, linkcolor=blue, citecolor=blue, urlcolor=blue, pdfpagemode=UseOutlines, pdfauthor={H. Asorey}, pdftitle={Introducción a la Física - Guía 03} pdfkeywords={big bang}]{hyperref}
+\usepackage[adobe-utopia]{mathdesign}
+
+\hoffset -1.23cm
+\textwidth 16.5cm
+\voffset -2.0cm
+\textheight 26.0cm
+
+\begin{document}
+\begin{center}
+  {\small{Universidad Industrial de Santander - Escuela de Física}}\\
+  {\bf{Introducción a la Física 2014 (Asorey-Sarmiento-Pinilla)}}\\
+  \vspace{0.3cm}
+  Guía 03: Trabajando con la expansión del Universo: El Big Bang
+\end{center}
+
+\renewcommand{\labelenumi}{\arabic{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii})}
+
+\subsubsection*{Modalidad de Entrega}
+Deberán realizar un informe grupal de no más de tres páginas en \LaTeX, identificando claramente los miembros del grupo. Dado que nos interesa que empiecen a trabajar en \LaTeX, en este informe la presentación final del informe no será evaluada (salvo el cumplimiento de los lineamientos expresados debajo), sólo los conceptos vertidos y los análisis realizados. En todos los casos, utilicen todos los materiales que consideren necesarios para justificar sus respuestas, {\bf{citando}} correctamente las fuentes utilizadas.
+
+Recuerde los siguientes lineamientos mínimos para un informe:
+\begin{itemize}
+  \item El título debe capturar la atención de un posible lector
+  \item Es importante identificar correctamente a los autores del trabajo
+  \item El informe debe tener un resumen corto que explique las principales características y las conclusiones del trabajo realizado
+  \item Las figuras deben poseer epígrafes (pie de gráficas). Estos deben ser autocontenidos: con sólo leer el epígrafe el lector debe ser capaz de entender las gráficas sin necesidad de leer el texto. 
+  \item Las figuras deben ser explicadas y referenciadas en el texto del informe.
+  \item Las unidades se escriben fuera del entorno matemático: 
+  \begin{itemize}
+    \item {\bf{incorrecto}}: ``\ldots la distancia medida fue de $1.5 mts$ \ldots'' (se obtuvo así: \verb|$1.5 mts$|. Notar además que ``mts'' no es la abreviatura de metros en el sistema internacional).
+    \item {\bf{correcto}}: ``\ldots la distancia medida fue de $1.5$\,m \ldots'' (se obtuvo así: \verb|$1.5$\,m|).
+\end{itemize}
+  \item Un trabajo no puede tener faltas ni ortográficas ni gramaticales. Cuando termine de escribir, lea el texto en voz alta y corrija aquellas frases que necesiten serlo.
+\end{itemize}
+
+\subsubsection*{Preguntas para pensar y responder (lista no excluyente)}
+
+A partir de los datos recogidos en clase midiendo las distancias de alejamiento de los puntos sobre la superficie del globo, responda:
+
+\begin{enumerate}
+  \item Tomando como base el punto elegido, observe las diferencias en la evolución temporal de las distancias entre los puntos cercanos y los puntos lejanos. ¿que puede concluir de este análisis? Utilice las gráficas de las mediciones realizadas para justificar su respuesta\footnote{Puede utilizar cualquier software para analizar los datos, como por ejemplo, {\emph{Excel}} o {\emph{Calc}} de {\emph{LibreOffice}} incluido en la máquina virtual de la materia para realizar los análisis.}.
+  \item A partir de las mediciones realizadas, ¿es posible concluir que el punto que usted eligió corresponde a un verdadero ``centro'' en la superficie del globo? ¿qué hubiera pasado si hubieran elegido algún otro punto con las conclusiones del estudio?
+  \item ¿Cómo evoluciona la longitud de la onda con la expansión del globo? Utilice un gráfico para ilustrar su explicación.
+  \item Las mediciones realizadas permiten estimar los radios del globo en cada instante de medición
+    \begin{enumerate}
+      \item Explique de que forma la distancia entre dos puntos sobre la superficie de una esfera se relacionan con el radio del globo
+      \item Utilice lo anterior para obtener una aproximación de la densidad superficial de puntos sobre el globo en cada instante
+      \item Haga un gráfico de la evolución temporal de la densidad de puntos sobre el globo.
+    \end{enumerate}
+\end{enumerate}
+\end{document}

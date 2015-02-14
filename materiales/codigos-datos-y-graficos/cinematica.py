@@ -3,50 +3,53 @@
 
 """
 Código hecho en clases prácticas de Introducción a la Física
-E. de Física - UIS - Santander - Junio de 2013
+E. de Física - UIS - Santander - 2014
+H. Asorey y C. Sarmiento
 
-Ejemplo sobre como utilizar la nuestra clase vector y el algoritmo visto en clase
+Ejemplo sobre como utilizar nuestra clase vector y el algoritmo visto en clase
 para calcular trayectorias en R3
 """
 
-####################### mi clase vector
 import math
+####################### mi clase vector
 
 class vector:
     def __init__(self,lista):
-        self.x=[]
-        for xi in lista:
-          self.x.append(float(xi))
-        self.dim=len(self.x)
-        self.mod=math.sqrt(self.prod_escalar(self))
+        self.componentes=[]
+        for componente_i in lista:
+          self.componentes.append(float(componente_i))
+        self.dim=len(self.componentes)
+        self.mod=math.sqrt(prod_escalar(self,self))
 
-    def prod_escalar(self,a):
-        if (self.dim == a.dim):
-            pesc=0.
-            for i in range(0,self.dim):
-                pesc += (self.x[i] * a.x[i])
-            return pesc
-        else:
-            print "El productor escalar se define para vectores de la misma dimension"
-            return None
+###################### Operaciones entre vectores
 
-    def coseno(self,a):
-        if (self.dim == a.dim):
-          mods=self.mod*a.mod
-          if (mods):
-            return (self.prod_escalar(a) / mods)
-          else:
-            print "Para calcular el coseno los vectores no pueden ser nulos"
-            return None
-        else:
-            print "Solo se calcula el coseno para vectores de la misma dimension"
-            return None
+def prod_escalar(a,b):
+    if (a.dim == b.dim):
+        pesc=0.
+        for i in range(0,a.dim):
+            pesc += (a.componentes[i] * b.componentes[i])
+        return pesc
+    else:
+        print "El productor escalar se define para vectores de la misma dimension"
+        return None
+
+def coseno(a,b):
+    if (a.dim == b.dim):
+      mods=a.mod*b.mod
+      if (mods != 0 ):
+        return (prod_escalar(a,b) / mods)
+      else:
+        print "Para calcular el coseno los vectores no pueden ser nulos"
+        return None
+    else:
+        print "Sólo se calcula el coseno para vectores de la misma dimension"
+        return None
 
 def suma(a, b):
     suma=[]
     if (a.dim == b.dim):
        for i in range(0,a.dim):
-          suma.append(a.x[i]+b.x[i])
+          suma.append(a.componentes[i]+b.componentes[i])
        return vector(suma)
     else:
        print "La suma se define para vectores de la misma dimension"
@@ -56,17 +59,20 @@ def resta(a, b):
     resta=[]
     if (a.dim == b.dim):
        for i in range(0,a.dim):
-          resta.append(a.x[i]-b.x[i])
+          resta.append(a.componentes[i]-b.componentes[i])
        return vector(resta)
     else:
        print "La resta se define para vectores de la misma dimension"
        return None
 
+################################## Producto por un escalar
+
 def vector_escalar(a, num):
     escalar=[]
     for i in range(0,a.dim):
-      escalar.append(num*a.x[i])
+      escalar.append(num*a.componentes[i])
     return vector(escalar)
+
 
 ################################## mi programa
 # aqui comienza mi código...
@@ -94,11 +100,11 @@ for i in range(0,(int(tiempo*res)+1)):
 
     # imprimo el paso i, el tiempo 
     print i,i*dt,
-    for i in range (0,3):  # y las coordenadas del vector posición
-      print r.x[i],
+    for j in range (0,3):  # y las coordenadas del vector posición
+      print r.componentes[j],
 
     print 
 
-    # cinemática
+    # cinemática (forward-euler)
     r=suma(r, vector_escalar(v,dt)) # actualizo la posición r_{i+1} = r_i + v_i dt
     v=suma(v,vector_escalar(a,dt)) # actualizo la velocidad v_{i+1} = v_i + a_i dt
