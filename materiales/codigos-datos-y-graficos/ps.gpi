@@ -1,0 +1,9 @@
+set term postscript enhanced $1
+set output '$0.ps'
+replot
+set output
+set term x11
+#!gnome-open $0.ps
+!convert -rotate 90 -density 150 -quality 100 -geometry 100% $0.ps $0.png
+!rm $0.ps
+!eog $0.png &

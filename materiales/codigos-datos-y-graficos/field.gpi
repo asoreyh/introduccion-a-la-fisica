@@ -1,0 +1,80 @@
+reset; load '/home/asoreyh/.gnuplot'
+set xlabel "X (TL)"
+set ylabel "Y (TL)"
+set zlabel "Z (TL)"
+set grid
+set key out horizontal left reverse Left samplen 1.5
+set format "%.2f"
+mod(x,y,z)=sqrt(x**2+y**2+z**2)
+
+set xlabel "X (UA)"
+set ylabel "Y (UA)"
+set zlabel "Z (UA)"
+splot 'sun.dat' u 1:2:3 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+'< python field-sun.py' u 1:2:3:4:5:6:(mod($4,$5,$6)) w vectors filled lw 3 lc palette t ""
+#call '/work/asoreyh/tesis/figs/ps.gpi' 'exo-field-3d' 'solid color'
+set view map
+set size square
+plot 'sun.dat' u 1:2 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+'earth.dat' u ($3==0?$1:0/0):2:4:5:(mod($4,$5,$6)) w vectors filled lw 3 lt palette t ""
+call '/work/asoreyh/tesis/figs/ps.gpi' 'exo-field-map' 'solid color'
+
+# 
+# splot 'sun.dat' u 1:2:3 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+# 'earth.dat' u 1:2:3:4:5:6 w vectors filled lw 3 lc 5 t ""
+# call '/work/asoreyh/tesis/figs/ps.gpi' 'field-3d' 'solid color'
+# set view map
+# set size square
+# plot 'sun.dat' u 1:2 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+# 'earth.dat' u ($3==0?$1:0/0):2:4:5 w vectors filled lw 3 lc 5 t ""
+# call '/work/asoreyh/tesis/figs/ps.gpi' 'field-map' 'solid color'
+
+# set view map
+# set size square
+# set xrange [-2:2]
+# set yrange [-2:2]
+# splot \
+# 'earth.pos' u 1:2:3 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+# 'moon.pos'  u 1:2:3 w p ps 3 pt 6 lw 3 lc rgb "#000000" t "", \
+# 'two-earth.dat' u 1:2:3:4:5:6:(mod($4,$5,$6)) w vectors filled lw 3 lc palette t ""
+# call '/work/asoreyh/tesis/figs/ps.gpi' 'two-earth' 'solid color'
+
+# set view map
+# set size square
+# set xrange [-2:2]
+# set yrange [-2:2]
+# splot \
+# 'earth.pos' u 1:2:3 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+# 'moon.pos'  u 1:2:3 w p ps 1.5 pt 6 lw 3 lc rgb "#000000" t "", \
+# 'earth-moon.dat' u 1:2:3:4:5:6:(mod($4,$5,$6)) w vectors filled lw 3 lc palette t ""
+# call '/work/asoreyh/tesis/figs/ps.gpi' 'earth-moon' 'solid color'
+# 
+# set view map
+# set size square
+# set xrange [-1:1.5]
+# set yrange [-0.5:0.5]
+# splot \
+# 'earth.pos' u 1:2:3 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+# 'moon.pos'  u 1:2:3 w p ps 1.5 pt 6 lw 3 lc rgb "#000000" t "", \
+# 'earth-moon-zoom.dat' u (mod($4,$5,$6)<0.27?$1:0/0):2:3:4:5:6:(mod($4,$5,$6)) w vectors filled lw 3 lc palette t ""
+# call '/work/asoreyh/tesis/figs/ps.gpi' 'earth-moon-zoom' 'solid color'
+
+# set view map
+# set size square
+# set xrange [0.8:1.15]
+# set yrange [-0.1:0.1]
+# splot \
+# 'earth.pos' u 1:2:3 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+# 'moon.pos'  u 1:2:3 w p ps 1.5 pt 6 lw 3 lc rgb "#000000" t "", \
+# 'earth-moon-zoom-2.dat' u (mod($4,$5,$6)<0.042?$1:0/0):2:3:4:5:6:(mod($4,$5,$6)) w vectors filled lw 3 lc palette t ""
+# call '/work/asoreyh/tesis/figs/ps.gpi' 'earth-moon-zoom-2' 'solid color'
+
+# set view map
+# set size square
+# set xrange [0.84:1.0]
+# set yrange [-0.05:0.05]
+# splot \
+# 'earth.pos' u 1:2:3 w p ps 3 pt 6 lw 3 lc 2 t "" , \
+# 'moon.pos'  u 1:2:3 w p ps 1.5 pt 6 lw 3 lc rgb "#000000" t "", \
+# '< python field.py' u (mod($4,$5,$6)<0.042?$1:0/0):2:3:4:5:6:(mod($4,$5,$6)) w vectors filled lw 3 lc palette t ""
+# call '/work/asoreyh/tesis/figs/ps.gpi' 'earth-moon-zoom-3' 'solid color'

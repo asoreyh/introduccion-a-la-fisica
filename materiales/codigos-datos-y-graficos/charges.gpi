@@ -1,0 +1,58 @@
+reset; load '~/.gnuplot'
+
+
+set grid
+set xlabel "X (m)"
+set ylabel "Y (m)"
+set cblabel "|F| (N)"
+unset key
+fi(x,y)=sprintf("< python charges.py %d %.1f",x,y)
+pl(x,y)=sprintf("cap-%02d-%.1f.ps",x,y)
+
+
+set arrow 1 from -0.5,+0.5 to +0.5,+0.5 nohead lw 7 lt 1 lc rgb "#000000" front
+set arrow 2 from -0.5,-0.5 to +0.5,-0.5 nohead lw 7 lt 1 lc rgb "#000000" front
+set format x "%.1f"
+set format y "%.1f"
+set format z "%.1f"
+set format cb "%.1f"
+
+
+# 
+# a=1.
+# f=1.
+# plot [-a:a][-a:a] fi(1,f) u 1:2:4:5:7 w vectors filled lc palette 
+# set term postscript enhanced color solid
+# set output pl(1,1)
+# replot
+# set output
+# set term x11
+# 
+# do for [i=2:4:2] {
+#   print i
+#   set term postscript enhanced color solid
+#   set output pl(i,f)
+#   plot [-a:a][-a:a] fi(i,f) u 1:2:4:5:7 w vectors filled lc palette
+#   set output
+#   set term x11
+# }
+
+a=0.55
+f=0.5
+
+do for [i=4:20:4] {
+  print i
+  set term postscript enhanced color solid
+  set output pl(i,f)
+  plot [-a:a][-a:a] fi(i,f) u 1:2:4:5:7 w vectors filled lc palette
+  set output
+  set term x11
+}
+do for [i=30:230:40] {
+  print i
+  set term postscript enhanced color solid
+  set output pl(i,f)
+  plot [-a:a][-a:a] fi(i,f) u 1:2:4:5:7 w vectors filled lc palette
+  set output
+  set term x11
+}
