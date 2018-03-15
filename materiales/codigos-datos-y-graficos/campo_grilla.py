@@ -59,12 +59,14 @@ def vector_escalar(a, num):
 # constante de Coulomb
 k=8.988e9
 # mis cargas
-Q1 = 1.
+Q1 = 0.
 r1 = vector([-1.0,0,0])
-Q2 = -1.
+Q2 = +1.
 r2=vector([0,0,0])
-Q3 = 1.
+Q3 = 0.
 r3=vector([1.0,0,0])
+# y la carga de prueba
+q = -1.;
 #Defino los puntos iniciales para calcular la grilla xi,yi,zi y 
 # los saltos, dx, dy y dz y el número de puntos nx,ny,nz
 xi=-1.
@@ -94,17 +96,17 @@ for i in range(0,nx):
       #Verifico que los vectores diferencia no sean nulos:
       if (d1.mod!=0. and d2.mod!=0. and d3.mod!=0.):
         # Calculo el potencial debido a cada carga en r
-        V1 = k*Q1/d1.mod
-        V2 = k*Q2/d2.mod
-        V3 = k*Q3/d3.mod
+        V1 = k*q*Q1/d1.mod
+        V2 = k*q*Q2/d2.mod
+        V3 = k*q*Q3/d3.mod
         # y ahora, segun el ppio de superposicion, el potencial total es
         V = V1 + V2 + V3  
         # Ahora calculo el campo electrico (es una magnitud vectorial)
         # Calculo el campo electrico debido a cada carga individual
         # en vez de usar el vector unitario, uso el vector y divido por el modulo al cubo
-        E1 = vector_escalar(d1, k * Q1 / d1.mod**3)
-        E2 = vector_escalar(d2, k * Q2 / d2.mod**3)
-        E3 = vector_escalar(d3, k * Q3 / d3.mod**3)
+        E1 = vector_escalar(d1, k * q * Q1 / d1.mod**3)
+        E2 = vector_escalar(d2, k * q * Q2 / d2.mod**3)
+        E3 = vector_escalar(d3, k * q * Q3 / d3.mod**3)
         # Principio de superposicion: el campo electrico es
         E12 = suma(E1, E2)
         E = suma(E12,E3)
